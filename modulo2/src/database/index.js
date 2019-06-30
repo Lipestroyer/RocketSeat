@@ -1,4 +1,4 @@
-import Sequelize from 'sequelize';
+import { Sequelize } from 'sequelize';
 
 import User from '../app/models/User';
 
@@ -14,7 +14,7 @@ class Database {
   init() {
     this.connection = new Sequelize(databaseConfig);
 
-    models.map(model => model.init(this.conection));
+    models.map(model => model.init(this.connection));
   }
 }
 
