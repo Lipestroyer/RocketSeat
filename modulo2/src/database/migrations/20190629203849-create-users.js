@@ -13,7 +13,7 @@ module.exports = {
       },
       email: {
         type: Sequelize.STRING,
-        adllowNull: false,
+        allowNull: false,
         unique: true,
       },
       password_hash: {
@@ -25,6 +25,10 @@ module.exports = {
         defaultValue: false,
       },
       created_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
+      updated_at: {
         type: Sequelize.DATE,
         allowNull: false,
       },
