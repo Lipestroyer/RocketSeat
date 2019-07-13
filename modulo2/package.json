@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon src/server.js",
-    "kill": "taskkill /F /IM node.exe"
+    "killNode": "taskkill /F /IM node.exe",
+    "startPostgres": "docker run --name database -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -13,7 +14,8 @@
     "jsonwebtoken": "^8.5.1",
     "pg": "^7.11.0",
     "pg-hstore": "^2.3.3",
-    "sequelize": "^5.9.0"
+    "sequelize": "^5.9.0",
+    "yup": "^0.27.0"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
