@@ -10,6 +10,6 @@ module.exports = {
   },
 
   down: queryInterface => {
-    return queryInterface.RemoveColumn('users', 'avatar_id');
+    return queryInterface.removeColumn('users', 'avatar_id');
   },
 };
