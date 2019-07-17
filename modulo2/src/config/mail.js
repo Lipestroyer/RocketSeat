@@ -9,12 +9,12 @@
   Mailtrap(Somente para ambiente dev se colocar no servidor não funciona)
  */
 export default {
-  host: 'smtp.mailtrap.io',
-  port: '2525',
+  host: process.env.MAIL_HOST,
+  port: process.env.MAIL_PORT,
   secure: false,
   auth: {
-    user: 'd7f64470a29714',
-    pass: '39d3a2888b32c5',
+    user: process.env.MAIL_USER,
+    pass: process.env.MAIL_PASS,
   },
   default: {
     from: 'Philipe Antunes <noreply@philipe.com>',
