@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import { Keyboard } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import api from '../../services/api';
 
@@ -15,10 +16,7 @@ export default class Main extends Component {
 
   handleAddUser = async () => {
     const { users, newUser } = this.state;
-
-    console.tron.log(newUser);
     const response = await api.get(`/users/${newUser}`);
-    console.tron.log(JSON.stringify(response.data));
     const data = {
       name: response.data.name,
       login: response.data.login,
@@ -30,6 +28,8 @@ export default class Main extends Component {
       users: [...users, data],
       newUser: '',
     });
+
+    Keyboard.dismiss();
   };
 
   render() {
